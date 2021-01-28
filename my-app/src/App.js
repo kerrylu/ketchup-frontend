@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import './api-form-submit.js';
+import NameForm from './api-form-submit.js';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         >
           Let's Ketchup
         </a>
+          <NameForm />
       </header>
     </div>
   );
