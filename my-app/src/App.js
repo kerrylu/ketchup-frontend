@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import './api-form-submit.js';
 import './loginform.js';
-import NameForm from './api-form-submit.js';
 import LoginForm from './loginform.js';
 
 function App() {
