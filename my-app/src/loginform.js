@@ -4,9 +4,12 @@ import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 class LoginForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { email: '' };
-    this.state = { password: '' }
+    this.state = {
+      email: '',
+      password: ''
+    }
   }
+
   handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value});
   }
