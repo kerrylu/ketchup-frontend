@@ -29,7 +29,7 @@ class NameForm extends React.Component {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
+            Username:
             <input type="text" value={this.state.value} name="name" onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
