@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import logo from './components/logo.jpeg'
 import './App.css';
-import './loginform.js';
-import LoginForm from './loginform.js';
+import './components/loginform.js';
+import './components/signupform.js';
+import LoginForm from './components/loginform.js';
+import SignupForm from './components/signupform.js';
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Navbar from './components/Navbar.js';
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import Signup from './pages/Signup.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Let's Ketchup
-        </a>
-          <LoginForm />
+        <img src={logo}/>
+        Let's Ketchup
+        <BrowserRouter>
+          <Navbar />
+          <div className="container mt-2" style={{ marginTop: 40 }}>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/signup">
+                <Signup />
+              </Route>
+            </Switch>
+          </div>
+        </BrowserRouter>
       </header>
     </div>
   );
