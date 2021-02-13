@@ -2,8 +2,8 @@
 
 import React from "react";
 import '../components/Signupform.js';
-import SignupForm from "../components/Signupform.js";
 import logo from '../components/logo.jpeg';
+import SignupForm from "../components/Signupform.js";
 
 class Signup extends React.Component {
   constructor(props) {

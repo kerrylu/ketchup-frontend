@@ -1,12 +1,15 @@
 import './App.css';
 import './components/Loginform.js';
 import './components/Signupform.js';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import KetchupNavbar from './components/KetchupNavbar.js';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
-import Signup from './pages/Signup.js';
+import SignupRedirect from './pages/SignupRedirect.js';
+import SignupForm from './components/Signupform.js';
 import Profile from './pages/Profile.js';
+import Contactus from './pages/Contactus.js';
+import Login from './pages/Login.js';
 
 function App() {
   return (
@@ -22,8 +25,17 @@ function App() {
               <Route path="/about">
                 <About />
               </Route>
+              <Route path="/contactus">
+                <Contactus />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/signupredirect">
+                <SignupRedirect />
+              </Route>
               <Route path="/signup">
-                <Signup />
+                <SignupForm />
               </Route>
               <Route path="/profile">
                 <Profile />

@@ -9,22 +9,13 @@ class SignupForm extends React.Component {
       password: '',
       confirmPassowrd: '',
       code: '',
-      isPatient: false,
-      isTherapist: false
-    }
+    };
   }
 
   handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value});
   }
 
-  handleToggle = (event) => {
-    this.setState({[event.target.name]: !this.state.[event.target.name]})
-    //debug
-    console.log([event.target.name]);
-    console.log(this.state.[event.target.name]);
-  }
-  
   handleSubmit = (event) => {
     var data = { email: this.state.email, password: this.state.password, code: this.state.code}
     // debug
@@ -60,14 +51,6 @@ class SignupForm extends React.Component {
         </FormGroup>
         <FormGroup controlId="formCode">
           <FormControl type="code" placeholder="Activation Code" value={this.state.code} name="code" onChange={this.handleChange} />
-        </FormGroup>
-        <FormGroup controlId="Checkbox">
-          <FormControl type="checkbox" value={this.state.isPatient} name="isPatient" onChange={this.handleToggle} />
-          <Form.Label>I am a Patient</Form.Label>
-        </FormGroup>
-        <FormGroup controlId="Checkbox">
-          <FormControl type="checkbox" value={this.state.isTherapist} name="isTherapist" onChange={this.handleToggle} />
-          <Form.Label>I am a Therapist</Form.Label>
         </FormGroup>
         <FormGroup controlId="formSubmit">
           <Button type="submit" onClick={this.handleSubmit}>
