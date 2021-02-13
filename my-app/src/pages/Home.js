@@ -2,8 +2,8 @@
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import '../components/Loginform.js';
-import LoginForm from '../components/Loginform.js';
+import '../components/LoginForm.js';
+import LoginForm from '../components/LoginForm.js';
 import logo from '../components/logo.jpeg';
 
 class Home extends React.Component {

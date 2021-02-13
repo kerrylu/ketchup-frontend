@@ -1,7 +1,7 @@
 // pages/SignupRedirect.js
 
 import React from "react";
-import '../components/Signupform.js';
+import '../components/SignupForm.js';
 import logo from '../components/logo.jpeg';
 import { Nav } from 'react-bootstrap';
 

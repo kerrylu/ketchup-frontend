@@ -1,6 +1,6 @@
 import './App.css';
-import './components/Loginform.js';
-import './components/Signupform.js';
+import './components/LoginForm.js';
+import './components/SignupForm.js';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import KetchupNavbar from './components/KetchupNavbar.js';
 import Home from './pages/Home.js';
