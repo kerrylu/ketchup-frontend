@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-class SignupForm extends Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
+      confirmPassowrd: '',
       code: '',
       isPatient: false,
       isTherapist: false
@@ -53,6 +54,9 @@ class SignupForm extends Component {
         </FormGroup>
         <FormGroup controlId="formPassword">
           <FormControl type="password" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
+        </FormGroup>
+        <FormGroup controlId="formPassword">
+          <FormControl type="password" placeholder="Confirm Password" value={this.state.confirmPassword} name="confirmPassword" onChange={this.handleChange} />
         </FormGroup>
         <FormGroup controlId="formCode">
           <FormControl type="code" placeholder="Activation Code" value={this.state.code} name="code" onChange={this.handleChange} />
