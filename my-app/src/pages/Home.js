@@ -6,25 +6,32 @@ import '../components/Loginform.js';
 import LoginForm from '../components/Loginform.js';
 import logo from '../components/logo.jpeg';
 
-const Home = () => (
-  <div>
-    <h1 className="title is-1">This is the Home Page</h1>
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
     <div>
-      <img src={logo}/>
-      <div>Let's Ketchup</div>
-      <LoginForm />
+      <h1 className="title is-1">This is the Home Page</h1>
       <div>
-        Don't have an account?
-        <NavLink
-        className="navbar-item"
-        activeClassName="is-active"
-        to="/signup"
-        >
-        Signup
-        </NavLink>
+        <img src={logo}/>
+        <div>Let's Ketchup</div>
+        <LoginForm />
+        <div>
+          Don't have an account?
+          <NavLink
+          className="navbar-item"
+          activeClassName="is-active"
+          to="/signup"
+          >
+          Signup
+          </NavLink>
+        </div>
       </div>
     </div>
-  </div>
-);
+    );
+  }
+}
 
 export default Home;
