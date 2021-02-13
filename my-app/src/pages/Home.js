@@ -1,7 +1,7 @@
 // pages/Home.js
 
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import '../components/loginform.js';
 import LoginForm from '../components/loginform.js';
 import logo from '../components/logo.jpeg';
@@ -9,11 +9,21 @@ import logo from '../components/logo.jpeg';
 const Home = () => (
   <div>
     <h1 className="title is-1">This is the Home Page</h1>
-    <p>
+    <div>
       <img src={logo}/>
-      <p>Let's Ketchup</p>
+      <div>Let's Ketchup</div>
       <LoginForm />
-    </p>
+      <div>
+        Don't have an account?
+        <NavLink
+        className="navbar-item"
+        activeClassName="is-active"
+        to="/signup"
+        >
+        Signup
+        </NavLink>
+      </div>
+    </div>
   </div>
 );
 

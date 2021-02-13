@@ -8,10 +8,10 @@ import logo from '../components/logo.jpeg';
 const Signup = () => (
   <div>
     <h1 className="title is-1">This is the Signup Page</h1>
-    <p>
+    <div>
       <img src={logo}/>
       <SignupForm />
-    </p>
+    </div>
   </div>
 );
 
