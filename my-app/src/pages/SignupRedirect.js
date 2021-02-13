@@ -3,9 +3,7 @@
 import React from "react";
 import '../components/Signupform.js';
 import logo from '../components/logo.jpeg';
-import Signup from './Signup.js';
-import { Nav, Button } from 'react-bootstrap';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Nav } from 'react-bootstrap';
 
 class SignupRedirect extends React.Component {
   constructor(props) {
@@ -19,8 +17,8 @@ class SignupRedirect extends React.Component {
         <h1 className="title is-1">This is the SignupRedirect Page</h1>
         <div>
           <img src={logo}/>
-          <Nav.Link href="signup"> I am a Patient</Nav.Link>
-          <Nav.Link href="signup"> I am a Therapist</Nav.Link>
+          <Nav.Link href="patientsignup"> I am a Patient</Nav.Link>
+          <Nav.Link href="therapistsignup"> I am a Therapist</Nav.Link>
         </div>
       </div>
     );

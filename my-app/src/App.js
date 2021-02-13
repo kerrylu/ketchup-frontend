@@ -6,7 +6,8 @@ import KetchupNavbar from './components/KetchupNavbar.js';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
 import SignupRedirect from './pages/SignupRedirect.js';
-import SignupForm from './components/Signupform.js';
+import PatientSignup from './pages/PatientSignup.js';
+import TherapistSignup from './pages/TherapistSignup.js';
 import Profile from './pages/Profile.js';
 import Contactus from './pages/Contactus.js';
 import Login from './pages/Login.js';
@@ -34,8 +35,11 @@ function App() {
               <Route path="/signupredirect">
                 <SignupRedirect />
               </Route>
-              <Route path="/signup">
-                <SignupForm />
+              <Route path="/patientsignup">
+                <PatientSignup />
+              </Route>
+              <Route path="/therapistsignup">
+                <TherapistSignup />
               </Route>
               <Route path="/profile">
                 <Profile />
