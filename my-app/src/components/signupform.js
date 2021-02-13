@@ -6,7 +6,8 @@ class SignupForm extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      code: ''
     }
   }
 
@@ -15,11 +16,12 @@ class SignupForm extends Component {
   }
   
   handleSubmit = (event) => {
-    var data = { email: this.state.email, password: this.state.password}
+    var data = { email: this.state.email, password: this.state.password, code: this.state.code}
     // debug
     console.log('A signup form was submitted: ');
     console.log(this.state.email);
     console.log(this.state.password);
+    console.log(this.state.code);
     console.log(JSON.stringify(data))
 
     fetch('https://httpbin.org/post', {
@@ -42,6 +44,9 @@ class SignupForm extends Component {
         </FormGroup>
         <FormGroup controlId="formPassword">
           <FormControl type="password" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
+        </FormGroup>
+        <FormGroup controlId="formCode">
+          <FormControl type="code" placeholder="Referral Code" value={this.state.code} name="code" onChange={this.handleChange} />
         </FormGroup>
         <FormGroup controlId="formSubmit">
           <Button type="submit" onClick={this.handleSubmit}>

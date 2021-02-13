@@ -9,11 +9,11 @@ import logo from '../components/logo.jpeg';
 const Home = () => (
   <div>
     <h1 className="title is-1">This is the Home Page</h1>
-    <p>
+    <div>
       <img src={logo}/>
-      <p>Let's Ketchup</p>
+      <div>Let's Ketchup</div>
       <LoginForm />
-    </p>
+    </div>
   </div>
 );
 
