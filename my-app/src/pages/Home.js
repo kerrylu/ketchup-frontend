@@ -2,8 +2,8 @@
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import '../components/loginform.js';
-import LoginForm from '../components/loginform.js';
+import '../components/Loginform.js';
+import LoginForm from '../components/Loginform.js';
 import logo from '../components/logo.jpeg';
 
 const Home = () => (

@@ -1,11 +1,12 @@
 import './App.css';
-import './components/loginform.js';
-import './components/signupform.js';
+import './components/Loginform.js';
+import './components/Signupform.js';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Navbar from './components/Navbar.js';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
 import Signup from './pages/Signup.js';
+import Profile from './pages/Profile.js';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
               </Route>
               <Route path="/signup">
                 <Signup />
+              </Route>
+              <Route path="/profile">
+                <Profile />
               </Route>
             </Switch>
           </div>

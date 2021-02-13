@@ -1,8 +1,8 @@
 // pages/Signup.js
 
 import React from "react";
-import '../components/signupform.js';
-import SignupForm from "../components/signupform.js";
+import '../components/Signupform.js';
+import SignupForm from "../components/Signupform.js";
 import logo from '../components/logo.jpeg';
 
 const Signup = () => (
