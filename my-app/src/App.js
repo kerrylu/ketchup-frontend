@@ -2,7 +2,7 @@ import './App.css';
 import './components/Loginform.js';
 import './components/Signupform.js';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import Navbar from './components/Navbar.js';
+import KetchupNavbar from './components/KetchupNavbar.js';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
 import Signup from './pages/Signup.js';
@@ -13,10 +13,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-          <Navbar />
+          <KetchupNavbar />
           <div className="container mt-2" style={{ marginTop: 40 }}>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/home">
                 <Home />
               </Route>
               <Route path="/about">
