@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-class SignupForm extends React.Component {
+class PatientSignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,4 +62,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default SignupForm;
+export default PatientSignupForm;

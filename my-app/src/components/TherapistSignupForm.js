@@ -1,14 +1,13 @@
 import React from 'react';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-class SignupForm extends React.Component {
+class TherapistSignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
       confirmPassowrd: '',
-      code: '',
     };
   }
 
@@ -17,12 +16,11 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit = (event) => {
-    var data = { email: this.state.email, password: this.state.password, code: this.state.code}
+    var data = { email: this.state.email, password: this.state.password}
     // debug
     console.log('A signup form was submitted: ');
     console.log(this.state.email);
     console.log(this.state.password);
-    console.log(this.state.code);
     console.log(JSON.stringify(data))
 
     fetch('https://httpbin.org/post', {
@@ -49,9 +47,6 @@ class SignupForm extends React.Component {
         <FormGroup controlId="formPassword">
           <FormControl type="password" placeholder="Confirm Password" value={this.state.confirmPassword} name="confirmPassword" onChange={this.handleChange} />
         </FormGroup>
-        <FormGroup controlId="formCode">
-          <FormControl type="code" placeholder="Activation Code" value={this.state.code} name="code" onChange={this.handleChange} />
-        </FormGroup>
         <FormGroup controlId="formSubmit">
           <Button type="submit" onClick={this.handleSubmit}>
             Register
@@ -62,4 +57,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default SignupForm;
+export default TherapistSignupForm;
