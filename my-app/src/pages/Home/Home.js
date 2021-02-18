@@ -1,10 +1,7 @@
-// pages/Home.js
+// pages/Home/Home.js
 
 import React from "react";
-import { NavLink } from "react-router-dom";
-import '../components/LoginForm.js';
-import LoginForm from '../components/LoginForm.js';
-import logo from '../components/logo.jpeg';
+import logo from '../../logo.jpeg';
 
 class Home extends React.Component {
   constructor(props) {

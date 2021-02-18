@@ -1,7 +1,7 @@
-// pages/About.js
+// pages/About/About.js
 
 import React from "react";
-import logo from '../components/logo.jpeg';
+import logo from '../../logo.jpeg';
 
 class About extends React.Component {
   constructor(props) {

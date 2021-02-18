@@ -1,7 +1,7 @@
-// pages/Profile.js
+// pages/Profile/Profile.js
 
 import React from "react";
-import logo from '../components/logo.jpeg';
+import logo from '../../logo.jpeg';
 
 class Profile extends React.Component {
   constructor(props) {
