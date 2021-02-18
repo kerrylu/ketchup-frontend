@@ -1,16 +1,16 @@
 import './App.css';
-import './components/LoginForm.js';
-import './components/SignupForm.js';
+import './pages/Login/LoginForm.js';
+import './pages/Signup/SignupForm.js';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import KetchupNavbar from './components/KetchupNavbar.js';
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import SignupRedirect from './pages/SignupRedirect.js';
-import PatientSignup from './pages/PatientSignup.js';
-import TherapistSignup from './pages/TherapistSignup.js';
-import Profile from './pages/Profile.js';
-import Contactus from './pages/Contactus.js';
-import Login from './pages/Login.js';
+import KetchupNavbar from './KetchupNavbar.js';
+import Home from './pages/Home/Home.js';
+import About from './pages/About/About.js';
+import SignupRedirect from './pages/Signup/SignupRedirect.js';
+import PatientSignup from './pages/Signup/PatientSignup.js';
+import TherapistSignup from './pages/Signup/TherapistSignup.js';
+import Profile from './pages/Profile/Profile.js';
+import Contactus from './pages/Contactus/Contactus.js';
+import Login from './pages/Login/Login.js';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <KetchupNavbar />
           <div className="container mt-2" style={{ marginTop: 40 }}>
             <Switch>
-              <Route exact path="/home">
+              <Route exact path="/">
                 <Home />
               </Route>
               <Route path="/about">

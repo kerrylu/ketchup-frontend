@@ -1,9 +1,9 @@
-// pages/Signup.js
+// pages/Signup/Signup.js
 
 import React from "react";
-import '../components/SignupForm.js';
-import logo from '../components/logo.jpeg';
-import SignupForm from "../components/Signupform.js";
+import './SignupForm.js';
+import logo from '../../logo.jpeg';
+import SignupForm from "./SignupForm.js";
 
 class Signup extends React.Component {
   constructor(props) {

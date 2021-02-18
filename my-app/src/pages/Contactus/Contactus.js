@@ -1,7 +1,7 @@
-// pages/Contactus.js
+// pages/Contactus/Contactus.js
 
 import React from "react";
-import logo from '../components/logo.jpeg';
+import logo from '../../logo.jpeg';
 
 class Contactus extends React.Component {
   constructor(props) {

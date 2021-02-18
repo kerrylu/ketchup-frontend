@@ -1,10 +1,10 @@
-// pages/Login.js
+// pages/Login/Login.js
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import '../components/LoginForm.js';
-import LoginForm from '../components/LoginForm.js';
-import logo from '../components/logo.jpeg';
+import './LoginForm.js';
+import LoginForm from './LoginForm.js';
+import logo from '../../logo.jpeg';
 
 class Login extends React.Component {
   constructor(props) {

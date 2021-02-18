@@ -1,9 +1,9 @@
-// pages/TherapistSignup.js
+// pages/Signup/TherapistSignup.js
 
 import React from "react";
-import '../components/TherapistSignupForm.js';
-import logo from '../components/logo.jpeg';
-import TherapistSignupForm from "../components/TherapistSignupForm.js";
+import './TherapistSignupForm.js';
+import logo from '../../logo.jpeg';
+import TherapistSignupForm from "./TherapistSignupForm.js";
 
 class TherapistSignup extends React.Component {
   constructor(props) {
