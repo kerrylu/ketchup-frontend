@@ -11,6 +11,7 @@ import TherapistSignup from './pages/Signup/TherapistSignup.js';
 import Profile from './pages/Profile/Profile.js';
 import Contactus from './pages/Contactus/Contactus.js';
 import Login from './pages/Login/Login.js';
+import PatientHub from './pages/PatientHub/PatientHub.js';
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
               </Route>
               <Route path="/profile">
                 <Profile />
+              </Route>
+              <Route path ="/patientHub">
+                <PatientHub />
               </Route>
             </Switch>
           </div>
