@@ -8,38 +8,47 @@ import PatientInfo from "./PatientInfo.js";
 import "./PatientSum.js"
 import PatientSum from "./PatientSum.js";
 
-// Swaps what info is showed when clicked
+//import ScrollView from "./ScrollView";
 
+let listItems = []
+    for (let i = 0; i < 20; i++) {
+      listItems.push(<PatientSum name = "Brycen" status = "G" profilePicture = "https://bootdey.com/img/Content/avatar/avatar5.png" averageScore = "1"/>)
+      listItems.push(<PatientSum name = "DC3" status = "Y" profilePicture = "https://bootdey.com/img/Content/avatar/avatar4.png" averageScore = "0"/>)
+      listItems.push(<PatientSum name = "Grace" status = "R" profilePicture = "https://bootdey.com/img/Content/avatar/avatar2.png" averageScore = "-1"/>)
+}
 
 class PatientHub extends React.Component {
   constructor(props) {
     super(props);
+    
   }
-
+//
   render() {
     return (
       
       <Container>
 
                 <h1>Patient Hub</h1>
-        <Row>
+        <Row >
 
           <Col xs={3}>
             <input type="text" class="form-control my-3" placeholder="Search..."></input>
-            <PatientSum name = "Brycen Rushing" status = "G" profilePicture = "https://bootdey.com/img/Content/avatar/avatar5.png" averageScore = "1"/>
-            <PatientSum name = "DC3" status = "Y" profilePicture = "https://bootdey.com/img/Content/avatar/avatar4.png" averageScore = "0"/>
-            <PatientSum name = "Grace" status = "R" profilePicture = "https://bootdey.com/img/Content/avatar/avatar2.png" averageScore = "-1"/>
-            
+
+            <div className="react-scrollable-list" >
+              {listItems}
+            </div>
+
           </Col>
 
 
-          <Col>
+          <Col >
 
-            <PatientInfo />
+            <PatientInfo  />
 
           </Col>
 
         </Row>
+        
 
       </Container>
     );

@@ -29,16 +29,16 @@ class PatientInfo extends React.Component {
 
   render() {
     return (
-      <Container>
-      <Row>
-        <button onClick={this.graphClicked}>Graph</button>
-        <button onClick={this.diaryClicked}>Diary</button>
-        <button onClick={this.statsClicked}>Stats</button>
-        <button onClick={this.notesClicked}>Notes</button>
-      </Row>
+      <Container style={{ textAlign: "center" }}>
+      
+      <Button variant="secondary" size = "lg" onClick={this.graphClicked}>Graph</Button>{' '}
+      <Button variant="secondary" size = "lg" onClick={this.diaryClicked}>Diary</Button>{' '}
+      <Button variant="secondary" size = "lg" onClick={this.statsClicked}>Stats</Button>{' '}
+      <Button variant="secondary" size = "lg" onClick={this.notesClicked}>Notes</Button>
+      
       {this.state.display == "Graph" && <PatientGraph />}
-      {this.state.display == "Stats" && <PatientStats />}
       {this.state.display == "Diary" && <PatientDiary />}
+      {this.state.display == "Stats" && <PatientStats />}
       {this.state.display == "Notes" && <PatientNotes />}
 
     </Container>

@@ -12,7 +12,7 @@ class PatientDiary extends React.Component {
 
   render() {
     return (
-        <h2>Diary</h2>
+      <h3 className="mt-5">Diary</h3>
     );
   }
 }
