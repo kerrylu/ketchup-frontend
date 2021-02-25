@@ -10,6 +10,10 @@ class LoginForm extends Component {
     }
   }
 
+  changeLoginStatus = () => {
+    this.props.changeIsLoggedIn();
+  }
+
   handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value});
   }
@@ -30,6 +34,7 @@ class LoginForm extends Component {
         console.log(response)
         return response.json();
       });
+      this.changeLoginStatus()
 
     event.preventDefault();
   }

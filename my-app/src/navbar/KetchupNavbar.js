@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import logo from './logo.jpeg'
+import logo from '../logo.jpeg'
 
 class KetchupNavbar extends React.Component {
   constructor(props) {
