@@ -12,7 +12,10 @@ class PatientNotes extends React.Component {
 
   render() {
     return (
+      <Col>
       <h3 className="mt-5">Notes</h3>
+      <h1>{this.props.patient.name}</h1>
+      </Col>
     );
   }
 }

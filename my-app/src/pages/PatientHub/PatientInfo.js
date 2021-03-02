@@ -13,7 +13,6 @@ class PatientInfo extends React.Component {
     super(props);
     this.state = {display : "Graph"};
   }
-
   graphClicked = () => {
     this.setState({display: "Graph"})
   }
@@ -36,12 +35,12 @@ class PatientInfo extends React.Component {
       <Button variant="secondary" size = "lg" onClick={this.statsClicked}>Stats</Button>{' '}
       <Button variant="secondary" size = "lg" onClick={this.notesClicked}>Notes</Button>
       
-      {this.state.display == "Graph" && <PatientGraph />}
-      {this.state.display == "Diary" && <PatientDiary />}
-      {this.state.display == "Stats" && <PatientStats />}
-      {this.state.display == "Notes" && <PatientNotes />}
+      {this.state.display == "Graph" && <PatientGraph patient = {this.props.patient}/>}
+      {this.state.display == "Diary" && <PatientDiary patient = {this.props.patient}/>}
+      {this.state.display == "Stats" && <PatientStats patient = {this.props.patient}/>}
+      {this.state.display == "Notes" && <PatientNotes patient = {this.props.patient}/>}
 
-    </Container>
+      </Container>
     );
   }
 }

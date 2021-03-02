@@ -20,12 +20,12 @@ class PatientGraph extends React.Component {
           fill: true,
           lineTension: 0.3,
           backgroundColor: "rgba(184, 185, 210, .3)",
-          borderColor: "rgb(35, 26, 136)",
+          borderColor: "rgb(146, 170, 255)",
           borderCapStyle: "butt",
           borderDash: [],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
-          pointBorderColor: "rgb(35, 26, 136)",
+          pointBorderColor: "rgb(146, 170, 255)",
           pointBackgroundColor: "rgb(255, 255, 255)",
           pointBorderWidth: 10,
           pointHoverRadius: 5,
@@ -44,7 +44,7 @@ class PatientGraph extends React.Component {
   render() {
     return (
       <MDBContainer>
-        <h3 className="mt-5">Graph</h3>
+        <h3 className="mt-5">Graph {this.props.patient.name}</h3>
         <Line data={this.state.dataLine} options={lineOptions} />
       </MDBContainer>
     );

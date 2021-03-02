@@ -9,46 +9,96 @@ import "./PatientSum.js"
 import PatientSum from "./PatientSum.js";
 
 //import ScrollView from "./ScrollView";
-
-let listItems = []
-    for (let i = 0; i < 20; i++) {
-      listItems.push(<PatientSum name = "Brycen" status = "G" profilePicture = "https://bootdey.com/img/Content/avatar/avatar5.png" averageScore = "1"/>)
-      listItems.push(<PatientSum name = "DC3" status = "Y" profilePicture = "https://bootdey.com/img/Content/avatar/avatar4.png" averageScore = "0"/>)
-      listItems.push(<PatientSum name = "Grace" status = "R" profilePicture = "https://bootdey.com/img/Content/avatar/avatar2.png" averageScore = "-1"/>)
+const grace = {
+  name : "grace",
+  status : "R",
+  profilePicture : "https://bootdey.com/img/Content/avatar/avatar8.png",
+  averageScore : "-1"
 }
+const brycen = {
+  name : "Brycen",
+  status : "G",
+  profilePicture : "https://bootdey.com/img/Content/avatar/avatar6.png",
+  averageScore : "0"
+}
+const danny = {
+  name : "Danny",
+  status : "G",
+  profilePicture : "https://bootdey.com/img/Content/avatar/avatar4.png",
+  averageScore : "0.3"
+}
+
 
 class PatientHub extends React.Component {
   constructor(props) {
     super(props);
-    
+    this.getTherapist = this.getTherapist.bind(this);
+    this.getPatients = this.getPatients.bind(this);
+    this.makePatientBoard = this.makePatientBoard.bind(this);
+    this.setCurrentPatient = this.setCurrentPatient.bind(this); 
+
+    const therapistID = this.getTherapist()
+    var patients = this.getPatients(therapistID)
+    var curPatient = patients[0];
+    var patientBoard = this.makePatientBoard(patients)
+    this.state = {therapistID : therapistID,
+                  patients : patients,
+                  curPatient : curPatient,
+                  patientBoard : patientBoard};
   }
+
+  getPatients(therapist) {
+    // Add patients that fall under given therapist
+    let patients = [brycen, danny, grace]
+
+    return (patients)
+  }
+
+  getTherapist() {
+    // Get the ID of the logged in therapist
+    let dummyObject = brycen
+
+    return (dummyObject)
+  }
+
+  setCurrentPatient(patient) {
+    this.setState({curPatient : patient})
+  }
+
+  makePatientBoard(patients) {
+    // Go through paitent table and access their name, pp, flag, and sentiment score ACCESS FROM STATE
+    var listItems = []
+    
+    for (const i in patients) {
+      listItems.push(<PatientSum patient = {patients[i]} handler={this.setCurrentPatient} value={patients[i]}/>)
+    }
+    return (listItems)
+  }
+
 //
   render() {
     return (
       
       <Container>
-
-                <h1>Patient Hub</h1>
+                <h1 >Patient Hub</h1>     
         <Row >
 
           <Col xs={3}>
             <input type="text" class="form-control my-3" placeholder="Search..."></input>
 
             <div className="react-scrollable-list" >
-              {listItems}
+              {this.state.patientBoard}
             </div>
-
           </Col>
 
 
           <Col >
-
-            <PatientInfo  />
-
+            <PatientInfo patient = {this.state.curPatient} />
           </Col>
 
         </Row>
-        
+
+        <p> {this.state.curPatient.name} </p>
 
       </Container>
     );
