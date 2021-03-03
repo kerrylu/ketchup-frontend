@@ -14,7 +14,6 @@ class PatientStats extends React.Component {
     return (
       <Col>
       <h3 className="mt-5">Stats</h3>
-      <h1>{this.props.patient.name}</h1>
       </Col>
       
     );

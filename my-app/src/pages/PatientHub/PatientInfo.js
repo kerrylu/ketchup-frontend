@@ -45,7 +45,7 @@ class PatientInfo extends React.Component {
       <Button variant="secondary" size = "lg" onClick={this.statsClicked}>Stats</Button>{' '}
       <Button variant="secondary" size = "lg" onClick={this.notesClicked}>Notes</Button>
       
-      {this.state.display == "Graph" && <PatientGraph patient = {this.props.patient} handler = {this.getData} display = "2 Weeks" graphInfo = {this.props.lineChartData}/>}
+      {this.state.display == "Graph" && <PatientGraph patient = {this.props.patient} handler = {this.props.getData} display = "2 Weeks" graphInfo = {this.props.lineChartData}/>}
       {this.state.display == "Diary" && <PatientDiary patient = {this.props.patient}/>}
       {this.state.display == "Stats" && <PatientStats patient = {this.props.patient}/>}
       {this.state.display == "Notes" && <PatientNotes patient = {this.props.patient}/>}

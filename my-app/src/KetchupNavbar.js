@@ -20,6 +20,7 @@ class KetchupNavbar extends React.Component {
         <Navbar bg="light" variant="light">
           <Nav className="mr-auto">
             <Nav.Link href="">Home</Nav.Link>
+            <Nav.Link href="patienthub">PatientHub</Nav.Link>
             <Nav.Link href="notifications">Notifications</Nav.Link>
             <Nav.Link href="profile">Profile</Nav.Link>
             <Button onClick={this.handleSignout}>Sign Out</Button>
@@ -32,9 +33,9 @@ class KetchupNavbar extends React.Component {
       return (
         <Navbar bg="light" variant="light">
           <Nav className="mr-auto">
+            <Nav.Link href="">Home</Nav.Link>
             <Nav.Link href="about">About</Nav.Link>
             <Nav.Link href="contactus">Contact Us</Nav.Link>
-            <Nav.Link href="profile">Profile</Nav.Link>
             <Nav.Link href="login">Sign in</Nav.Link>
           </Nav>
         </Navbar>

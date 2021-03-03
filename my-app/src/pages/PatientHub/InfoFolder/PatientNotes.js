@@ -18,10 +18,9 @@ class PatientNotes extends React.Component {
           <Text>
             <Col>
               <h3 className="mt-5">Notes</h3>
-              <h1>{this.props.patient.name}</h1>
             </Col>
             <br/>
-              <h4>Relationship Issues</h4>
+              <h4 >Relationship Issues</h4>
               - Has trust issues with partner
               <br/>
               - Working to be more independent
