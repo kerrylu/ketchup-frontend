@@ -3,7 +3,7 @@ import './pages/Login/LoginForm.js';
 import './pages/Signup/SignupForm.js';
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import DynamicNavbar from './DynamicNavbar.js';
+import KetchupNavbar from './KetchupNavbar.js';
 import Home from './pages/Home/Home.js';
 import About from './pages/About/About.js';
 import SignupRedirect from './pages/Signup/SignupRedirect.js';
@@ -12,6 +12,7 @@ import TherapistSignup from './pages/Signup/TherapistSignup.js';
 import Profile from './pages/Profile/Profile.js';
 import Contactus from './pages/Contactus/Contactus.js';
 import Login from './pages/Login/Login.js';
+import PatientHub from './pages/PatientHub/PatientHub.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <BrowserRouter>
-            <DynamicNavbar isLoggedIn={this.state.isLoggedIn} changeLoginStatus = {this.handleSignout}/>
+            <KetchupNavbar isLoggedIn={this.state.isLoggedIn} changeLoginStatus = {this.handleSignout}/>
             <div className="container mt-2" style={{ marginTop: 40 }}>
               <Switch>
                 <Route exact path="/">
