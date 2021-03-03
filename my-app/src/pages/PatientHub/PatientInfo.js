@@ -8,11 +8,21 @@ import PatientNotes from "./InfoFolder/PatientNotes";
 import PatientStats from "./InfoFolder/PatientStats";
 import "./PatientHub.css";
 
+
+// make Fake Data
+
+
 class PatientInfo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {display : "Graph"};
+    this.state = {display: "Graph",
+    }
   }
+
+
+
+
+
   graphClicked = () => {
     this.setState({display: "Graph"})
   }
@@ -35,7 +45,7 @@ class PatientInfo extends React.Component {
       <Button variant="secondary" size = "lg" onClick={this.statsClicked}>Stats</Button>{' '}
       <Button variant="secondary" size = "lg" onClick={this.notesClicked}>Notes</Button>
       
-      {this.state.display == "Graph" && <PatientGraph patient = {this.props.patient} display = "2 Weeks"/>}
+      {this.state.display == "Graph" && <PatientGraph patient = {this.props.patient} handler = {this.getData} display = "2 Weeks" graphInfo = {this.props.lineChartData}/>}
       {this.state.display == "Diary" && <PatientDiary patient = {this.props.patient}/>}
       {this.state.display == "Stats" && <PatientStats patient = {this.props.patient}/>}
       {this.state.display == "Notes" && <PatientNotes patient = {this.props.patient}/>}
