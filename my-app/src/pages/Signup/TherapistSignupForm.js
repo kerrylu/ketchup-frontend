@@ -18,17 +18,17 @@ class TherapistSignupForm extends React.Component {
   handleSubmit = (event) => {
     var data = { email: this.state.email, password: this.state.password}
     // debug
-    console.log('A signup form was submitted: ');
-    console.log(this.state.email);
-    console.log(this.state.password);
-    console.log(JSON.stringify(data))
+    //console.log('A signup form was submitted: ');
+    //console.log(this.state.email);
+    //console.log(this.state.password);
+    //console.log(JSON.stringify(data))
 
     fetch('https://httpbin.org/post', {
         method: 'POST',
         // We convert the React state to JSON and send it as the POST body
         body: JSON.stringify((this.state.email, this.state.password))
       }).then(function(response) {
-        console.log(response)
+        //console.log(response)
         return response.json();
       });
 
