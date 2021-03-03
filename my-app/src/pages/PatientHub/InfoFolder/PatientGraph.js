@@ -21,7 +21,7 @@ class PatientGraph extends React.Component {
     return (
       <MDBContainer >
 
-        <h3 className="mt-5">Graph {this.props.patient.name}</h3>
+        <h3 className="mt-5">Graph</h3>
 
         {this.props.display == "2 Weeks" && <Line data={this.props.graphInfo} options={lineOptions}  redraw/>}
 
