@@ -59,6 +59,9 @@ class App extends React.Component {
                 <Route path="/profile">
                   <Profile />
                 </Route>
+                <Route path="/patienthub">
+                  <PatientHub/>
+                </Route>
               </Switch>
             </div>
           </BrowserRouter>
