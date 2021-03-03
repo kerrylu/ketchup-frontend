@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
-
-
+import Calendar from 'react-calendar'
 
 class PatientDiary extends React.Component {
   constructor(props) {
@@ -13,8 +12,11 @@ class PatientDiary extends React.Component {
   render() {
     return (
       <Col>
-      <h3 className="mt-5">Diary</h3>
-      <h1>{this.props.patient.id}</h1>
+      <h3 className="mt-5">Calendar</h3>
+      <h1>{this.props.patient.name}</h1>
+      <div>
+        <Calendar></Calendar>
+      </div>
       </Col>
     );
   }
