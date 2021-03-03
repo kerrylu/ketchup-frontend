@@ -14,10 +14,10 @@ class PatientDiary extends React.Component {
     return (
       <Col>
       <h3 className="mt-5">Diary</h3>
-      <h1>{this.props.patient.name}</h1>
+      <h1>{this.props.patient.id}</h1>
       </Col>
     );
   }
 }
 
-export default PatientDiary;
+export default PatientDiary; 
