@@ -9,19 +9,23 @@ import "./PatientSum.js"
 import PatientSum from "./PatientSum.js";
 
 //import ScrollView from "./ScrollView";
+
 const grace = {
+  id : "gft56",
   name : "grace",
   status : "R",
   profilePicture : "https://bootdey.com/img/Content/avatar/avatar8.png",
-  averageScore : "-1"
+  averageScore : "-1",
 }
 const brycen = {
+  id : "bcr16",
   name : "Brycen",
   status : "G",
   profilePicture : "https://bootdey.com/img/Content/avatar/avatar6.png",
   averageScore : "0"
 }
 const danny = {
+  id : "dcc33",
   name : "Danny",
   status : "G",
   profilePicture : "https://bootdey.com/img/Content/avatar/avatar4.png",
@@ -97,8 +101,6 @@ class PatientHub extends React.Component {
           </Col>
 
         </Row>
-
-        <p> {this.state.curPatient.name} </p>
 
       </Container>
     );
