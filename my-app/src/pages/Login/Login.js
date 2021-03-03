@@ -16,12 +16,13 @@ class Login extends React.Component {
   }
   handleLogin = () => {
     this.setState({isLoggedIn: true})
+    this.setState({terminate: false})
   }
   changeLoginStatus = () => {
-    this.props.changeIsLoggedIn();
+    this.props.changeLoginStatus();
   }
   render() {
-    console.log(this.state.isLoggedIn)
+    // console.log(this.state.isLoggedIn)
     if (this.state.isLoggedIn & !this.state.terminate) {
       this.changeLoginStatus()
       this.setState({terminate: true})
@@ -32,7 +33,7 @@ class Login extends React.Component {
       <div>
         <img src={logo}/>
         <div>Let's Ketchup</div>
-        <LoginForm changeIsLoggedIn = {this.handleLogin}/>
+        <LoginForm changeLoginStatus = {this.handleLogin}/>
         <div>
           Don't have an account?
           <NavLink

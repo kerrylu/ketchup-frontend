@@ -23,12 +23,15 @@ class App extends React.Component {
   handleLogin = () => {
     this.setState({isLoggedIn: true})
   }
+  handleSignout = () => {
+    this.setState({isLoggedIn: false})
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <BrowserRouter>
-            <DynamicNavbar isLoggedIn={this.state.isLoggedIn}/>
+            <DynamicNavbar isLoggedIn={this.state.isLoggedIn} changeLoginStatus = {this.handleSignout}/>
             <div className="container mt-2" style={{ marginTop: 40 }}>
               <Switch>
                 <Route exact path="/">
@@ -41,7 +44,7 @@ class App extends React.Component {
                   <Contactus />
                 </Route>
                 <Route path="/login">
-                  <Login changeIsLoggedIn = {this.handleLogin}/>
+                  <Login changeLoginStatus = {this.handleLogin}/>
                 </Route>
                 <Route path="/signupredirect">
                   <SignupRedirect />
