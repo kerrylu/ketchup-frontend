@@ -21,7 +21,7 @@ class KetchupNavbar extends React.Component {
           <Nav className="mr-auto">
             <Nav.Link href="">Home</Nav.Link>
             <Nav.Link href="notifications">Notifications</Nav.Link>
-            <Nav.Link href="profile">Profile</Nav.Link>
+            <Nav.Link href="patienthub">Patient Hub</Nav.Link>
             <Button onClick={this.handleSignout}>Sign Out</Button>
           </Nav>
         </Navbar>
