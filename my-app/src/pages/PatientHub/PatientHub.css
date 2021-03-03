@@ -1,0 +1,15 @@
+.infoSide {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+
+.react-scrollable-list {
+    height: 500px;
+    width:100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display:inline-block;
+    padding-right: 25px;
+    padding-left: 17px;
+  }

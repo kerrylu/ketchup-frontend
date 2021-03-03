@@ -2,70 +2,107 @@
 
 import React from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
-import "./patientHub.css"
+import "./PatientHub.css"
 import "./PatientInfo.js"
+import PatientInfo from "./PatientInfo.js";
 import "./PatientSum.js"
+import PatientSum from "./PatientSum.js";
 
-function PatientSum() {
-  return(
-    <Container>
-    <Row>
-      <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40"></img>
-      <div class="flex-grow-1 ml-3">Brycen Rushing</div> 
-      <div class="badge bg-success float-right">Flag</div>
-    </Row>
-    </Container>
-    );
+//import ScrollView from "./ScrollView";
+
+const grace = {
+  id : "gft56",
+  name : "grace",
+  status : "R",
+  profilePicture : "https://bootdey.com/img/Content/avatar/avatar8.png",
+  averageScore : "-1",
 }
-
-function PatientInfo() {
-  return(
-    <Container>
-      <Row>
-        <Button>Graph</Button>
-        <Button>Stats</Button>
-        <Button>Diary</Button>
-        <Button>Notes</Button>
-      </Row>
-      <p>GRAPH</p>
-    </Container>
-    );
+const brycen = {
+  id : "bcr16",
+  name : "Brycen",
+  status : "G",
+  profilePicture : "https://bootdey.com/img/Content/avatar/avatar6.png",
+  averageScore : "0"
+}
+const danny = {
+  id : "dcc33",
+  name : "Danny",
+  status : "G",
+  profilePicture : "https://bootdey.com/img/Content/avatar/avatar4.png",
+  averageScore : "0.3"
 }
 
 
 class PatientHub extends React.Component {
   constructor(props) {
     super(props);
+    this.getTherapist = this.getTherapist.bind(this);
+    this.getPatients = this.getPatients.bind(this);
+    this.makePatientBoard = this.makePatientBoard.bind(this);
+    this.setCurrentPatient = this.setCurrentPatient.bind(this); 
+
+    const therapistID = this.getTherapist()
+    var patients = this.getPatients(therapistID)
+    var curPatient = patients[0];
+    var patientBoard = this.makePatientBoard(patients)
+    this.state = {therapistID : therapistID,
+                  patients : patients,
+                  curPatient : curPatient,
+                  patientBoard : patientBoard};
   }
 
+  getPatients(therapist) {
+    // Add patients that fall under given therapist
+    let patients = [brycen, danny, grace]
+
+    return (patients)
+  }
+
+  getTherapist() {
+    // Get the ID of the logged in therapist
+    let dummyObject = brycen
+
+    return (dummyObject)
+  }
+
+  setCurrentPatient(patient) {
+    this.setState({curPatient : patient})
+  }
+
+  makePatientBoard(patients) {
+    // Go through paitent table and access their name, pp, flag, and sentiment score ACCESS FROM STATE
+    var listItems = []
+    
+    for (const i in patients) {
+      listItems.push(<PatientSum patient = {patients[i]} handler={this.setCurrentPatient} value={patients[i]}/>)
+    }
+    return (listItems)
+  }
+
+//
   render() {
     return (
       
       <Container>
-                <h1>Patient Hub</h1>
+                <h1 >Patient Hub</h1>     
+        <Row >
 
-
-        <Row>
           <Col xs={3}>
             <input type="text" class="form-control my-3" placeholder="Search..."></input>
-            
-            <PatientSum />
-            <PatientSum />
-            <PatientSum />
-            
+
+            <div className="react-scrollable-list" >
+              {this.state.patientBoard}
+            </div>
           </Col>
 
-          <Col className="infoSide">
-            <PatientInfo />
+
+          <Col >
+            <PatientInfo patient = {this.state.curPatient} />
           </Col>
+
         </Row>
-        
 
-
-
-          </Container>
-      
-        
+      </Container>
     );
   }
 }

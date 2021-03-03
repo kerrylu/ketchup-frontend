@@ -10,7 +10,6 @@ class KetchupNavbar extends React.Component {
   render() {
     return (
     <Navbar bg="light" variant="light">
-      
       <Nav className="mr-auto">
         <Nav.Link href="about">About</Nav.Link>
         <Nav.Link href="contactus">Contact Us</Nav.Link>
