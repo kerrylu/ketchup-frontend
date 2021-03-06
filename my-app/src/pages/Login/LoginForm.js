@@ -9,11 +9,7 @@ class LoginForm extends Component {
       password: ''
     }
   }
-
-  changeLoginStatus = () => {
-    this.props.changeLoginStatus();
-  }
-
+  
   handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value});
   }
@@ -34,7 +30,7 @@ class LoginForm extends Component {
         //console.log(response)
         return response.json();
       });
-      this.changeLoginStatus()
+      this.props.changeLoginStatus()
 
     event.preventDefault();
   }

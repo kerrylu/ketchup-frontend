@@ -24,7 +24,7 @@ class Login extends React.Component {
   render() {
     // console.log(this.state.isLoggedIn)
     if (this.state.isLoggedIn & !this.state.terminate) {
-      this.changeLoginStatus()
+      this.props.changeLoginStatus()
       this.setState({terminate: true})
     }
     return (
