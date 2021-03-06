@@ -1,28 +1,21 @@
 import React from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 
 class KetchupNavbar extends React.Component {
   constructor(props) {
     super(props);
   }
-  changeLoginStatus = () => {
-    this.props.changeLoginStatus();
-  }
-  handleSignout = () => {
-    this.changeLoginStatus()
-  }
 
   render() {
-    console.log(this.props.isLoggedIn)
     // patient hub
-    if (this.props.isLoggedIn) {
+    if (this.props.isLoggedIn == 'true') {
       return (
         <Navbar bg="light" variant="light">
           <Nav className="mr-auto">
-            <Nav.Link href="">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="notifications">Notifications</Nav.Link>
             <Nav.Link href="patienthub">Patient Hub</Nav.Link>
-            <Button onClick={this.handleSignout}>Sign Out</Button>
+            <Button onClick={this.props.changeLoginStatus}>Sign Out</Button>
           </Nav>
         </Navbar>
         );
@@ -38,7 +31,7 @@ class KetchupNavbar extends React.Component {
             <Nav.Link href="login">Sign in</Nav.Link>
           </Nav>
         </Navbar>
-        );
+      );
     }
   }
 }

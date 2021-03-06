@@ -17,22 +17,27 @@ import PatientHub from './pages/PatientHub/PatientHub.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoggedIn: false
-    };
+    this.state = { 
+      isLoggedIn: localStorage.getItem('isLoggedInValue') || false
+    }
+    this.handleLogin = this.handleLogin.bind(this)
+    this.handleSignout = this.handleSignout.bind(this)
+  } 
+
+  handleLogin() {
+    localStorage.setItem('isLoggedInValue', true)
+    this.setState({ isLoggedIn : localStorage.getItem('isLoggedInValue')})
   }
-  handleLogin = () => {
-    this.setState({isLoggedIn: true})
-  }
-  handleSignout = () => {
-    this.setState({isLoggedIn: false})
+  handleSignout() {
+    localStorage.setItem('isLoggedInValue', false)
+    this.setState({ isLoggedIn : localStorage.getItem('isLoggedInValue')})
   }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <BrowserRouter>
-            <KetchupNavbar isLoggedIn={this.state.isLoggedIn} changeLoginStatus = {this.handleSignout}/>
+            <KetchupNavbar isLoggedIn = {this.state.isLoggedIn} changeLoginStatus = {this.handleSignout}/>
             <div className="container mt-2" style={{ marginTop: 40 }}>
               <Switch>
                 <Route exact path="/">
