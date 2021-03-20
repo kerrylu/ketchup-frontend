@@ -12,7 +12,7 @@ class PatientSum extends React.Component {
 
   render() {
     return (
-      <div onClick={()=>this.props.handler(this.props.value)}>
+      <div onClick={()=>this.props.handler(this.props.patient)}>
       <Row >
         <img src={this.props.patient.profilePicture} class="rounded-circle mr-1" width="40" height="40"></img>
         <Col>
