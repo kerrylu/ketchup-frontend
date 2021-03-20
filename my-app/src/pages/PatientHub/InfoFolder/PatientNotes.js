@@ -2,16 +2,33 @@
 
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Container, Col, Row, Button, } from "react-bootstrap";
+import { Col, Button, Textarea } from "react-bootstrap";
 
 
 
 class PatientNotes extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      editing: false,
+      // ** Initialize "text" property with empty string here
+      text: "-Seems very interested in ketchup"
+    }
   }
-
-  render() {
+  edit = () => {
+    this.setState({editing: true})
+  }
+  save = () => {
+    var val = this.refs.newText.value;
+    alert(val)
+    this.setState({
+      // ** Update "text" property with new value (this fires render() again)
+      text: val,
+      editing: false
+    })
+  }
+  renderNormal = () => {
+    // ** Render "state.text" inside your <p> whether its empty or not...
     return (
       <View style={{height: 400}} >
         <ScrollView>
@@ -20,34 +37,40 @@ class PatientNotes extends React.Component {
               <h3 className="mt-5">Notes</h3>
               <h1>{this.props.patient.name}</h1>
             </Col>
-            <br/>
-              <h4>Relationship Issues</h4>
-              - Has trust issues with partner
-              <br/>
-              - Working to be more independent
-              <br/>
-              - Got into a huge fight about spending too much time with other men
-              <br/>
-              <br/>
-              <h4>Progress Over Time</h4>
-              - Came in during a major depressive episode
-              <br/>
-              - Has shown improvement with decreasing suicidal thoughts
-              <br/>
-              - Tends to do better when kept busy with activities
-              <br/>
-              <br/>
-              <h4>Key Interests</h4>
-              - Enjoys playing piano to cheer himself up
-              <br/>
-              - Likes to watch football and marvel movies
-              <br/>
-              - Seems very interested in ketchup
-              <br/>
+            <div>
+              <p>{this.state.text}</p>
+              <Button onClick={this.edit}>Edit</Button>
+            </div>
           </Text>
         </ScrollView>
       </View>
-    );
+    )
+  }
+  renderForm = () => {
+    return (
+      <View style={{height: 400}} >
+        <ScrollView>
+          <Text>
+            <Col>
+              <h3 className="mt-5">Notes</h3>
+              <h1>{this.props.patient.name}</h1>
+            </Col>
+            <div>
+              <textarea ref="newText" defaultValue={this.state.text} rows="10" cols="100"></textarea>
+              <Button onClick={this.save}>Save</Button>
+            </div>
+          </Text>
+        </ScrollView>
+      </View>
+    )
+  }
+
+  render() {
+    if (this.state.editing) {
+      return this.renderForm()
+    } else {
+      return this.renderNormal()
+    }
   }
 }
 
