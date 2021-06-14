@@ -2,7 +2,7 @@
 
 import React from "react";
 import './PatientSignupForm.js';
-import logo from '../../logo.jpeg';
+import logo from '../../newLogo.jpeg';
 import PatientSignupForm from "./PatientSignupForm.js";
 
 class PatientSignup extends React.Component {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import './TherapistSignupForm.js';
-import logo from '../../logo.jpeg';
+import logo from '../../newLogo.jpeg';
 import TherapistSignupForm from "./TherapistSignupForm.js";
 
 class TherapistSignup extends React.Component {

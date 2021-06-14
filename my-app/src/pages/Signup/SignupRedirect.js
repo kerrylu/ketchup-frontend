@@ -2,7 +2,7 @@
 
 import React from "react";
 import './SignupForm.js';
-import logo from '../../logo.jpeg';
+import logo from '../../newLogo.jpeg';
 import { Nav } from 'react-bootstrap';
 
 class SignupRedirect extends React.Component {

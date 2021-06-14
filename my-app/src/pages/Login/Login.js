@@ -4,7 +4,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import './LoginForm.js';
 import LoginForm from './LoginForm.js';
-import logo from '../../logo.jpeg';
+import logo from '../../newLogo.jpeg';
 
 class Login extends React.Component {
   constructor(props) {
